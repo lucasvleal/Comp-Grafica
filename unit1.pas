@@ -64,15 +64,12 @@ end;
 
 procedure TForm1.Image1MouseUp(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
+ var xa, ya : integer;
 begin
+  dx := X - x1;
+  dy := Y - y1;
 
-
-  dx := x2 - x1;
-  dy := y2 - y1;
-
-
-
-  if(dx > 0) then
+  if(x1 < X) then
         x2 := X;
         y2 := Y;
 
@@ -96,8 +93,9 @@ begin
                        Image1.canvas.pixels[x,y] := clyellow;
                   end;
           end;
-    end
-  else
+      end;
+
+  if(x1 > X) then
     begin
       xa := x1;
       ya := y1;
@@ -108,10 +106,10 @@ begin
       x2 := xa;
       y2 := ya;
 
-      a := (y2 - y1) / (x2 - x1);
-      b := y1 -   a * x1;
+      a := (y1 - y2) / (x1 - x2);
+      b := y2 -   a * x2;
 
-      if (dx > 100) then
+      if (dx < -100) then
             begin
               for x := x1 to x2 do
                   begin
@@ -131,7 +129,7 @@ begin
 end;
 
 
-end;
+
 
 end.
 

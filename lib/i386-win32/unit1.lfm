@@ -4,12 +4,12 @@ object Form1: TForm1
   Top = 175
   Width = 602
   Caption = 'Form1'
-  ClientHeight = 0
-  ClientWidth = 0
+  ClientHeight = 465
+  ClientWidth = 602
   OnCreate = FormCreate
   OnMouseDown = FormMouseDown
   OnMouseUp = FormMouseUp
-  LCLVersion = '1.4.0.4'
+  LCLVersion = '2.0.4.0'
   object Image1: TImage
     Left = 0
     Height = 426
