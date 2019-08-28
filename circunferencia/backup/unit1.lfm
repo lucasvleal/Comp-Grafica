@@ -1,0 +1,18 @@
+object Form1: TForm1
+  Left = 490
+  Height = 442
+  Top = 162
+  Width = 645
+  Caption = 'Form1'
+  ClientHeight = 442
+  ClientWidth = 645
+  LCLVersion = '2.0.4.0'
+  object Image1: TImage
+    Left = 8
+    Height = 426
+    Top = 8
+    Width = 626
+    OnMouseDown = Image1MouseDown
+    OnMouseUp = Image1MouseUp
+  end
+end
