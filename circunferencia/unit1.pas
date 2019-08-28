@@ -43,7 +43,7 @@ end;
 
 procedure TForm1.Image1MouseUp(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
- var inc : Real;
+ var inc : Integer;
 begin
     x1 := X;
     y1 := Y;
@@ -51,12 +51,14 @@ begin
     ya := y1 - yc;
 
     raio := round(sqrt((xa * xa) + (ya * ya)));
+    inc := 0;
 
     for x := -raio to raio do
       begin
            y := round(sqrt((raio * raio) - (x * x)));
-           Image1.Canvas.Pixels[x+xc,y+yc] := clblue;
-           Image1.Canvas.Pixels[xc-x,yc-y] := clwhite;
+           Image1.Canvas.Pixels[xc+(x+inc),y+yc] := clblue;
+           Image1.Canvas.Pixels[xc+(x+inc),yc-y] := clwhite;
+           inc := inc + round(1 / (raio * 10));
       end;
 end;
 
